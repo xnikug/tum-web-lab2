@@ -137,3 +137,20 @@ nav a:hover {
     color: var(--primary);
     cursor: pointer;
 }
+
+/* About Section */
+.about-bg {
+    background-color: var(--secondary);
+}
+
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.about-content p {
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    color: #4e342e;
+}
