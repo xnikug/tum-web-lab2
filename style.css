@@ -155,24 +155,6 @@ nav a:hover {
     color: #4e342e;
 }
 
-/* Language Button */
-.lang-btn {
-    background: transparent;
-    border: 2px solid var(--primary);
-    color: var(--primary);
-    padding: 0.3rem 0.8rem;
-    cursor: pointer;
-    font-weight: bold;
-    border-radius: 4px;
-    margin-left: 1rem;
-    transition: all 0.3s;
-}
-
-.lang-btn:hover {
-    background: var(--primary);
-    color: var(--white);
-}
-
 /* Quality Section */
 .quality-bg {
     background-color: #fcfcfc;
