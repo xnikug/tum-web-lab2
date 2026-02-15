@@ -3,56 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Oak & Velvet - Modern Furniture</title>
+    <title>3dmobila - Modern Furniture</title>
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <nav>
-        <div class="logo">Oak & Velvet</div>
+        <div class="logo">3dmobila</div>
         <ul>
-            <li><a href="#hero">Home</a></li>
-            <li><a href="#collection">Collection</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#quality">Quality</a></li>
+            <li><a href="#hero" data-key="nav-home">Home</a></li>
+            <li><a href="#collection" data-key="nav-collection">Collection</a></li>
+            <li><a href="#about" data-key="nav-about">About</a></li>
+            <li><a href="#quality" data-key="nav-quality">Quality</a></li>
         </ul>
+        <button id="lang-toggle" class="lang-btn">RO</button>
     </nav>
     <header id="hero" class="hero-section">
         <div class="hero-content">
-            <h1>Elevate Your Living Space</h1>
-            <p>Handcrafted furniture designed for comfort and built to last a lifetime.</p>
-            <a href="#collection" class="cta-button">Shop Collection</a>
+            <h1 data-key="hero-title">Elevate Your Living Space</h1>
+            <p data-key="hero-desc">Handcrafted furniture designed for comfort and built to last a lifetime.</p>
+            <a href="#collection" class="cta-button" data-key="hero-cta">Shop Collection</a>
         </div>
     </header>
     <section id="collection" class="section-padding">
-        <h2 class="section-title">Featured Collection</h2>
+        <h2 class="section-title" data-key="collection-title">Featured Collection</h2>
         <div class="product-grid">
             <div class="product-card">
                 <div class="placeholder-img">Sofa Image</div>
-                <h3>Velvet Sofa</h3>
+                <h3 data-key="prod-1-name">Velvet Sofa</h3>
                 <p>$899</p>
-                <button>Add to Cart</button>
+                <button data-key="add-cart">Add to Cart</button>
             </div>
             <div class="product-card">
                 <div class="placeholder-img">Table Image</div>
-                <h3>Oak Coffee Table</h3>
+                <h3 data-key="prod-2-name">Oak Coffee Table</h3>
                 <p>$249</p>
-                <button>Add to Cart</button>
+                <button data-key="add-cart">Add to Cart</button>
             </div>
             <div class="product-card">
                 <div class="placeholder-img">Lamp Image</div>
-                <h3>Modern Lamp</h3>
+                <h3 data-key="prod-3-name">Modern Lamp</h3>
                 <p>$129</p>
-                <button>Add to Cart</button>
+                <button data-key="add-cart">Add to Cart</button>
             </div>
           </div>
-        </section>
-        <section id="about" class="section-padding about-bg">
-            <div class="about-content">
-                <h2 class="section-title">Our Story</h2>
-                <p>Founded in 2024, Oak & Velvet began with a simple mission: to bring timeless elegance into modern homes. Every piece in our collection is curated for its durability, comfort, and aesthetic appeal.</p>
-                <p>We work directly with artisans who value sustainability and craftsmanship above all else.</p>
+    </section>
+
+    <section id="quality" class="section-padding quality-bg">
+        <h2 class="section-title" data-key="quality-title">Uncompromised Quality</h2>
+        <div class="quality-grid">
+            <div class="quality-item">
+                <h3 data-key="quality-1-head">Sustainable Materials</h3>
+                <p data-key="quality-1-desc">We source wood from certified forests.</p>
             </div>
-        </section>
+            <div class="quality-item">
+                <h3 data-key="quality-2-head">Handmade Finish</h3>
+                <p data-key="quality-2-desc">Every edge is polished by hand.</p>
+            </div>
+            <div class="quality-item">
+                <h3 data-key="quality-3-head">5-Year Warranty</h3>
+                <p data-key="quality-3-desc">We stand behind every piece we create.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="section-padding about-bg">
+        <div class="about-content">
+            <h2 class="section-title" data-key="about-title">Our Story</h2>
+            <p data-key="about-p1">Founded in 2024, 3dmobila began with a simple mission: to bring timeless elegance into modern homes. Every piece in our collection is curated for its durability, comfort, and aesthetic appeal.</p>
+            <p data-key="about-p2">We work directly with artisans who value sustainability and craftsmanship above all else.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 3dmobila. <span data-key="footer-rights">All rights reserved.</span></p>
+    </footer>
 </body>
 </html>
