@@ -353,3 +353,49 @@ footer {
     text-align: center;
     padding: 2rem;
 }
+
+/* Language Button */
+.lang-btn {
+    background: transparent;
+    border: 2px solid var(--primary);
+    color: var(--primary);
+    padding: 0.3rem 0.8rem;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 4px;
+    margin-left: 1rem;
+    transition: all 0.3s;
+}
+
+.lang-btn:hover {
+    background: var(--primary);
+    color: var(--white);
+}
+
+/* Quality Section */
+.quality-bg {
+    background-color: #fcfcfc;
+}
+
+.quality-grid {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 2rem;
+    text-align: center;
+}
+
+.quality-item {
+    flex: 1;
+    min-width: 250px;
+    padding: 2rem;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.quality-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--primary);
+}
