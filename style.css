@@ -54,14 +54,18 @@ nav a:hover {
     align-items: center;
     justify-content: center;
     text-align: center;
-    background-color: var(--secondary);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=2000');
+    background-size: cover;
+    background-position: center;
     padding: 0 1rem;
+    color: var(--white);
 }
 
 .hero-content h1 {
     font-size: 3.5rem;
     margin-bottom: 1rem;
-    color: var(--text);
+    color: var(--white);
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
 }
 
 .hero-content p {
@@ -70,6 +74,8 @@ nav a:hover {
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
+    color: #f5f5f5;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
 }
 
 .cta-button {
@@ -119,14 +125,12 @@ nav a:hover {
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
-.placeholder-img {
-    background-color: #eee;
+.product-img {
+    width: 100%;
     height: 200px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    object-fit: cover;
+    border-radius: 4px;
     margin-bottom: 1rem;
-    color: #888;
 }
 
 .product-card button {
@@ -180,6 +184,45 @@ nav a:hover {
 .quality-item h3 {
     font-size: 1.5rem;
     margin-bottom: 1rem;
+    color: var(--primary);
+}
+
+/* Testimonials Section */
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.testimonial-card {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    border-left: 4px solid var(--primary);
+    position: relative;
+}
+
+.testimonial-card::before {
+    content: '"';
+    font-size: 4rem;
+    color: var(--secondary);
+    position: absolute;
+    top: -10px;
+    left: 10px;
+    font-family: serif;
+}
+
+.testimonial-text {
+    font-style: italic;
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 1;
+}
+
+.testimonial-author {
+    font-weight: bold;
+    text-align: right;
     color: var(--primary);
 }
 
