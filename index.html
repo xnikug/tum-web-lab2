@@ -24,11 +24,24 @@
             <span></span>
         </button>
     </nav>
+
+    <!-- Mobile-only discount banner -->
+    <div class="mobile-only-banner" id="mobileBanner">
+        <span class="mobile-banner-icon">Oferta:</span>
+        <div>
+            <strong>Oferta Exclusiva Mobil!</strong>
+            <p>Comanda acum si primesti <strong>10% reducere</strong> cu codul <code>MOBIL10</code></p>
+        </div>
+        <button class="mobile-banner-close" onclick="this.parentElement.style.display='none'">X</button>
+    </div>
+
     <header id="hero" class="hero-section">
         <div class="hero-content">
             <h1>Elevați Spațiul de Locuit</h1>
             <p>Mobilier realizat manual, conceput pentru confort și construit să dureze o viață.</p>
             <a href="#collection" class="cta-button">Vezi Colecția</a>
+            <!-- Mobile-only secondary CTA -->
+            <a href="#custom-order" class="cta-button cta-secondary mobile-only-cta">Comandă Personalizat</a>
         </div>
     </header>
     <section id="collection" class="section-padding">

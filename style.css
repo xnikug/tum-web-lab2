@@ -381,3 +381,60 @@ footer {
     text-align: center;
     padding: 2rem;
 }
+
+/* Mobile-only banner — hidden on desktop, revealed via media query */
+.mobile-only-banner {
+    display: none;
+    align-items: center;
+    gap: 1rem;
+    background: linear-gradient(135deg, #ffd54f, #ffb300);
+    color: #1a237e;
+    padding: 0.9rem 1.2rem;
+    font-size: 0.9rem;
+    position: relative;
+}
+
+.mobile-banner-icon {
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.mobile-only-banner strong {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 0.2rem;
+}
+
+.mobile-only-banner code {
+    background: rgba(0,0,0,0.12);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-weight: bold;
+    font-family: monospace;
+}
+
+.mobile-banner-close {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.8rem;
+    background: none;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    color: #1a237e;
+    font-weight: bold;
+}
+
+/* Secondary CTA — hidden on desktop, shown on mobile */
+.cta-secondary {
+    background-color: rgba(255,255,255,0.15);
+    border: 2px solid var(--white);
+}
+
+.cta-secondary:hover {
+    background-color: rgba(255,255,255,0.3);
+}
+
+.mobile-only-cta {
+    display: none;
+}
