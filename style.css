@@ -30,22 +30,50 @@ nav {
     color: var(--primary);
 }
 
-nav ul {
+.nav-links {
     display: flex;
     list-style: none;
     gap: 2rem;
 }
 
-nav a {
+.nav-links a {
     text-decoration: none;
     color: var(--text);
     font-weight: 500;
     transition: color 0.3s;
 }
 
-nav a:hover {
+.nav-links a:hover {
     color: var(--primary);
 }
+
+/* Hamburger button — hidden on desktop */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 28px;
+    height: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.hamburger span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: var(--primary);
+    border-radius: 3px;
+    transition: all 0.3s ease;
+    transform-origin: center;
+}
+
+/* Hamburger → X animation */
+.hamburger.active span:nth-child(1) { transform: translateY(8.5px) rotate(45deg); }
+.hamburger.active span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.hamburger.active span:nth-child(3) { transform: translateY(-8.5px) rotate(-45deg); }
 
 /* Hero Section */
 .hero-section {
