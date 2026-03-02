@@ -6,22 +6,48 @@
     <title>3dmobila - Mobilier Modern</title>
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="style.css">
+    <!-- TailwindCSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-    <nav>
+    <!-- Hamburger checkbox for pure CSS toggle (no JS) -->
+    <input type="checkbox" id="navToggle" class="nav-toggle-input">
+
+    <nav id="navbar">
         <div class="logo">3dmobila</div>
-        <ul>
+        <ul class="nav-links" id="navLinks">
             <li><a href="#hero">Acasă</a></li>
             <li><a href="#collection">Colecție</a></li>
-            <li><a href="#about">Despre Noi</a></li>
             <li><a href="#quality">Calitate</a></li>
+            <li><a href="#custom-order">Comandă</a></li>
+            <li><a href="#about">Despre Noi</a></li>
         </ul>
+        <!-- Hamburger label (mobile only, no JS) -->
+        <label for="navToggle" class="hamburger" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
     </nav>
+
+    <!-- Mobile-only discount banner -->
+    <input type="checkbox" id="bannerClose" class="banner-close-input">
+    <div class="mobile-only-banner" id="mobileBanner">
+        <span class="mobile-banner-icon">Oferta:</span>
+        <div>
+            <strong>Oferta Exclusivă Mobil!</strong>
+            <p>Comandă acum și primești <strong>10% reducere</strong> cu codul <code>MOBIL10</code></p>
+        </div>
+        <label for="bannerClose" class="mobile-banner-close">X</label>
+    </div>
+
     <header id="hero" class="hero-section">
         <div class="hero-content">
             <h1>Elevați Spațiul de Locuit</h1>
             <p>Mobilier realizat manual, conceput pentru confort și construit să dureze o viață.</p>
             <a href="#collection" class="cta-button">Vezi Colecția</a>
+            <!-- Mobile-only secondary CTA -->
+            <a href="#custom-order" class="cta-button cta-secondary mobile-only-cta">Comandă Personalizat</a>
         </div>
     </header>
     <section id="collection" class="section-padding">
@@ -45,34 +71,48 @@
                 <p>599 MDL</p>
                 <button>Adaugă în Coș</button>
             </div>
-          </div>
+        </div>
     </section>
 
     <section id="quality" class="section-padding quality-bg">
         <h2 class="section-title">Calitate Fără Compromis</h2>
+        <p class="quality-subtitle">Fiecare detaliu contează. De la materia primă până la livrare.</p>
         <div class="quality-grid">
             <div class="quality-item">
                 <h3>Materiale Sustenabile</h3>
-                <p>Folosim lemn din păduri certificate.</p>
+                <p>Folosim exclusiv lemn certificat FSC din păduri administrate responsabil, cu impact minim asupra mediului înconjurător.</p>
             </div>
             <div class="quality-item">
                 <h3>Finisaj Manual</h3>
-                <p>Fiecare margine este finisată manual.</p>
+                <p>Fiecare piesă trece prin mâinile artizanilor noștri cu peste 20 de ani de experiență. Fiecare margine, îmbinare și suprafață -- perfectă.</p>
             </div>
             <div class="quality-item">
                 <h3>5 Ani Garanție</h3>
-                <p>Garantăm calitatea fiecărei piese create.</p>
+                <p>Suntem atât de siguri pe calitatea produselor noastre, încât oferim 5 ani garanție completă. Satisfacție 100% sau banii înapoi.</p>
             </div>
         </div>
     </section>
 
-    <section id="newsletter" class="section-padding newsletter-bg">
-        <div class="newsletter-content">
-            <h2 class="section-title">Abonează-te la Newsletter</h2>
-            <p>Primește cele mai noi oferte și inspirație pentru design interior direct în inbox.</p>
-            <form class="newsletter-form">
-                <input type="email" placeholder="Adresa ta de email" required>
-                <button type="submit">Mă Abonez</button>
+    <!-- Newsletter section migrated to TailwindCSS -->
+    <section id="newsletter" class="py-16 px-4 text-center" style="background-color: var(--primary);">
+        <div class="max-w-2xl mx-auto">
+            <h2 class="text-3xl font-bold mb-3 text-white">Abonează-te la Newsletter</h2>
+            <p class="text-base mb-8 text-white max-w-lg mx-auto">
+                Primește cele mai noi oferte și inspirație pentru design interior direct în inbox.
+            </p>
+            <form class="flex flex-col sm:flex-row justify-center gap-3 max-w-md mx-auto">
+                <input
+                    type="email"
+                    placeholder="adresa@email.com"
+                    required
+                    class="flex-1 px-4 py-3 rounded text-gray-900 text-base outline-none"
+                >
+                <button
+                    type="submit"
+                    class="newsletter-submit-btn px-6 py-3 font-bold rounded text-white transition-colors duration-200 whitespace-nowrap"
+                >
+                    Mă Abonez
+                </button>
             </form>
         </div>
     </section>
@@ -114,5 +154,6 @@
     <footer>
         <p>&copy; 2026 3dmobila. Toate drepturile rezervate.</p>
     </footer>
+
 </body>
 </html>
