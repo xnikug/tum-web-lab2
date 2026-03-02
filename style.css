@@ -48,6 +48,10 @@ nav {
 }
 
 /* Hamburger button — hidden on desktop */
+.nav-toggle-input {
+    display: none;
+}
+
 .hamburger {
     display: none;
     flex-direction: column;
@@ -70,10 +74,15 @@ nav {
     transform-origin: center;
 }
 
-/* Hamburger → X animation */
-.hamburger.active span:nth-child(1) { transform: translateY(8.5px) rotate(45deg); }
-.hamburger.active span:nth-child(2) { opacity: 0; transform: scaleX(0); }
-.hamburger.active span:nth-child(3) { transform: translateY(-8.5px) rotate(-45deg); }
+/* Hamburger X animation via checkbox */
+.nav-toggle-input:checked ~ nav .hamburger span:nth-child(1) { transform: translateY(8.5px) rotate(45deg); }
+.nav-toggle-input:checked ~ nav .hamburger span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.nav-toggle-input:checked ~ nav .hamburger span:nth-child(3) { transform: translateY(-8.5px) rotate(-45deg); }
+
+/* Show nav links when checkbox is checked */
+.nav-toggle-input:checked ~ nav .nav-links {
+    display: flex;
+}
 
 /* Hero Section */
 .hero-section {
@@ -383,6 +392,15 @@ footer {
     padding: 2rem;
 }
 
+/* Newsletter button hover (no JS) */
+.newsletter-submit-btn {
+    background-color: #0d47a1;
+}
+
+.newsletter-submit-btn:hover {
+    background-color: #002171;
+}
+
 /* ==============================================
    MASCOT
    ============================================== */
@@ -400,6 +418,7 @@ footer {
 }
 
 .mascot-svg {
+    display: block;
     width: 90px;
     height: 90px;
     filter: drop-shadow(0 6px 12px rgba(0,0,0,0.2));
@@ -418,9 +437,9 @@ footer {
 /* Speech bubble */
 .mascot-bubble {
     position: absolute;
-    bottom: 100%;
-    margin-bottom: 8px;
-    right: -10px;
+    left: 50%;
+    transform: translateX(-50%) translateY(8px) scale(0.95);
+    bottom: calc(100% + 12px);
     background: #fff;
     color: var(--text);
     padding: 12px 16px;
@@ -432,7 +451,6 @@ footer {
     line-height: 1.5;
     opacity: 0;
     pointer-events: none;
-    transform: translateY(8px) scale(0.95);
     transition: opacity 0.25s ease, transform 0.25s ease;
     border: 1.5px solid var(--secondary);
 }
@@ -449,10 +467,10 @@ footer {
 .mascot-bubble::before {
     content: '';
     position: absolute;
-    bottom: -14px;
+    bottom: -16px;
     left: 0;
     right: 0;
-    height: 14px;
+    height: 16px;
 }
 
 /* Bubble tail */
@@ -460,7 +478,8 @@ footer {
     content: '';
     position: absolute;
     bottom: -10px;
-    right: 40px;
+    left: 50%;
+    margin-left: -8px;
     border-width: 10px 8px 0;
     border-style: solid;
     border-color: #fff transparent transparent;
@@ -481,13 +500,13 @@ footer {
 }
 
 .mascot-cta-link:hover {
-    background: var(--primary-dark, #0d47a1);
+    background: #0d47a1;
 }
 
 /* Show bubble on hover */
 .mascot-container:hover .mascot-bubble {
     opacity: 1;
-    transform: translateY(0) scale(1);
+    transform: translateX(-50%) translateY(0) scale(1);
     pointer-events: all;
 }
 
@@ -512,34 +531,6 @@ footer {
         width: 155px;
         font-size: 0.8rem;
     }
-}
-
-/* ==============================================
-   MASCOT KEYFRAMES
-   ============================================== */
-
-@keyframes mascot-slide-in {
-    from {
-        bottom: -160px;
-        opacity: 0;
-    }
-    to {
-        bottom: 24px;
-        opacity: 1;
-    }
-}
-
-@keyframes mascot-bounce {
-    0%   { transform: translateY(0)     rotate(0deg); }
-    25%  { transform: translateY(-14px) rotate(-4deg); }
-    50%  { transform: translateY(0)     rotate(0deg); }
-    75%  { transform: translateY(-7px)  rotate(3deg); }
-    100% { transform: translateY(0)     rotate(0deg); }
-}
-
-@keyframes mascot-wiggle {
-    0%   { transform: rotate(-12deg) scale(1.08); }
-    100% { transform: rotate(12deg)  scale(1.08); }
 }
 
 /* Mobile-only banner — hidden on desktop, revealed via media query */
@@ -651,10 +642,6 @@ footer {
         box-shadow: 0 8px 20px rgba(0,0,0,0.1);
         z-index: 999;
         padding: 0.5rem 0;
-    }
-
-    .nav-links.open {
-        display: flex;
     }
 
     .nav-links li a {

@@ -10,6 +10,9 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
+    <!-- Hamburger checkbox for pure CSS toggle (no JS) -->
+    <input type="checkbox" id="navToggle" class="nav-toggle-input">
+
     <nav id="navbar">
         <div class="logo">3dmobila</div>
         <ul class="nav-links" id="navLinks">
@@ -19,12 +22,12 @@
             <li><a href="#custom-order">Comandă</a></li>
             <li><a href="#about">Despre Noi</a></li>
         </ul>
-        <!-- Hamburger button (mobile only) -->
-        <button class="hamburger" id="hamburgerBtn" aria-label="Toggle menu">
+        <!-- Hamburger label (mobile only, no JS) -->
+        <label for="navToggle" class="hamburger" aria-label="Toggle menu">
             <span></span>
             <span></span>
             <span></span>
-        </button>
+        </label>
     </nav>
 
     <!-- Mobile-only discount banner -->
@@ -105,10 +108,7 @@
                 >
                 <button
                     type="submit"
-                    class="px-6 py-3 font-bold rounded text-white transition-colors duration-200 whitespace-nowrap"
-                    style="background-color: #0d47a1;"
-                    onmouseover="this.style.backgroundColor='#002171'"
-                    onmouseout="this.style.backgroundColor='#0d47a1'"
+                    class="newsletter-submit-btn px-6 py-3 font-bold rounded text-white transition-colors duration-200 whitespace-nowrap"
                 >
                     Ma Abonez
                 </button>
@@ -199,24 +199,6 @@
         </svg>
         <div class="mascot-name">Armi</div>
     </div>
-
-    <script>
-        const btn = document.getElementById('hamburgerBtn');
-        const navLinks = document.getElementById('navLinks');
-
-        btn.addEventListener('click', () => {
-            navLinks.classList.toggle('open');
-            btn.classList.toggle('active');
-        });
-
-        // Close menu when a nav link is clicked
-        navLinks.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('open');
-                btn.classList.remove('active');
-            });
-        });
-    </script>
 
 </body>
 </html>
