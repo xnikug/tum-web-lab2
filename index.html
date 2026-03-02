@@ -134,5 +134,24 @@
     <footer>
         <p>&copy; 2026 3dmobila. Toate drepturile rezervate.</p>
     </footer>
+
+    <script>
+        const btn = document.getElementById('hamburgerBtn');
+        const navLinks = document.getElementById('navLinks');
+
+        btn.addEventListener('click', () => {
+            navLinks.classList.toggle('open');
+            btn.classList.toggle('active');
+        });
+
+        // Close menu when a nav link is clicked
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('open');
+                btn.classList.remove('active');
+            });
+        });
+    </script>
+
 </body>
 </html>
