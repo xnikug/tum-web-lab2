@@ -189,7 +189,81 @@ nav {
 
 /* Quality Section */
 .quality-bg {
-    background-color: #fcfcfc;
+    background-color: #f0f4f8;
+}
+
+.quality-subtitle {
+    text-align: center;
+    color: #555;
+    font-size: 1.05rem;
+    margin-top: -1.5rem;
+    margin-bottom: 3rem;
+}
+
+.quality-grid {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 2rem;
+    text-align: center;
+}
+
+.quality-item {
+    flex: 1;
+    min-width: 240px;
+    padding: 2.5rem 2rem 2rem;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(21, 101, 192, 0.08);
+    border-top: 4px solid var(--primary);
+    transition: transform 0.25s, box-shadow 0.25s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.quality-item:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 32px rgba(21, 101, 192, 0.15);
+}
+
+.quality-icon-wrap {
+    width: 72px;
+    height: 72px;
+    margin-bottom: 1.4rem;
+}
+
+.quality-icon-wrap svg {
+    width: 100%;
+    height: 100%;
+}
+
+.quality-item h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.8rem;
+    color: var(--primary);
+}
+
+.quality-item p {
+    font-size: 0.97rem;
+    color: #444;
+    line-height: 1.7;
+    margin-bottom: 1.2rem;
+    flex: 1;
+}
+
+.quality-badge {
+    display: inline-block;
+    padding: 4px 14px;
+    background-color: var(--secondary);
+    color: var(--primary);
+    border-radius: 20px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+    border: 1px solid #bbdefb;
+    margin-top: auto;
 }
 
 /* Custom Order Section */
@@ -363,12 +437,14 @@ footer {
     border: 1.5px solid var(--secondary);
 }
 
-.mascot-bubble p {
-    margin-bottom: 6px;
-}
-
-.mascot-bubble strong {
-    color: var(--primary);
+/* Transparent bridge fills the gap between bubble and mascot so hover doesn't break */
+.mascot-bubble::before {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    right: 0;
+    height: 20px;
 }
 
 /* Bubble tail */
@@ -459,6 +535,14 @@ footer {
 }
 
 /* Mobile-only banner — hidden on desktop, revealed via media query */
+.banner-close-input {
+    display: none;
+}
+
+.banner-close-input:checked ~ .mobile-only-banner {
+    display: none;
+}
+
 .mobile-only-banner {
     display: none;
     align-items: center;
