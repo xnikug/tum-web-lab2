@@ -215,7 +215,6 @@ nav {
     background: #fff;
     border-radius: 12px;
     box-shadow: 0 4px 20px rgba(21, 101, 192, 0.08);
-    border-top: 4px solid var(--primary);
     transition: transform 0.25s, box-shadow 0.25s;
     display: flex;
     flex-direction: column;
@@ -419,8 +418,9 @@ footer {
 /* Speech bubble */
 .mascot-bubble {
     position: absolute;
-    bottom: 108px;
-    right: 0;
+    bottom: 100%;
+    margin-bottom: 8px;
+    right: -10px;
     background: #fff;
     color: var(--text);
     padding: 12px 16px;
@@ -437,14 +437,22 @@ footer {
     border: 1.5px solid var(--secondary);
 }
 
+.mascot-bubble p {
+    margin-bottom: 6px;
+}
+
+.mascot-bubble strong {
+    color: var(--primary);
+}
+
 /* Transparent bridge fills the gap between bubble and mascot so hover doesn't break */
 .mascot-bubble::before {
     content: '';
     position: absolute;
-    bottom: -20px;
+    bottom: -14px;
     left: 0;
     right: 0;
-    height: 20px;
+    height: 14px;
 }
 
 /* Bubble tail */
@@ -452,7 +460,7 @@ footer {
     content: '';
     position: absolute;
     bottom: -10px;
-    right: 34px;
+    right: 40px;
     border-width: 10px 8px 0;
     border-style: solid;
     border-color: #fff transparent transparent;
