@@ -88,13 +88,29 @@
         </div>
     </section>
 
-    <section id="newsletter" class="section-padding newsletter-bg">
-        <div class="newsletter-content">
-            <h2 class="section-title">Abonează-te la Newsletter</h2>
-            <p>Primește cele mai noi oferte și inspirație pentru design interior direct în inbox.</p>
-            <form class="newsletter-form">
-                <input type="email" placeholder="Adresa ta de email" required>
-                <button type="submit">Mă Abonez</button>
+    <!-- Newsletter section migrated to TailwindCSS -->
+    <section id="newsletter" class="py-16 px-4 text-center" style="background-color: var(--primary);">
+        <div class="max-w-2xl mx-auto">
+            <h2 class="text-3xl font-bold mb-3 text-white">Aboneaza-te la Newsletter</h2>
+            <p class="text-base mb-8 text-white max-w-lg mx-auto">
+                Primeste cele mai noi oferte si inspiratie pentru design interior direct in inbox.
+            </p>
+            <form class="flex flex-col sm:flex-row justify-center gap-3 max-w-md mx-auto">
+                <input
+                    type="email"
+                    placeholder="adresa@email.com"
+                    required
+                    class="flex-1 px-4 py-3 rounded text-gray-900 text-base outline-none"
+                >
+                <button
+                    type="submit"
+                    class="px-6 py-3 font-bold rounded text-white transition-colors duration-200 whitespace-nowrap"
+                    style="background-color: #0d47a1;"
+                    onmouseover="this.style.backgroundColor='#002171'"
+                    onmouseout="this.style.backgroundColor='#0d47a1'"
+                >
+                    Ma Abonez
+                </button>
             </form>
         </div>
     </section>
