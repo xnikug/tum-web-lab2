@@ -47,7 +47,7 @@ nav {
     color: var(--primary);
 }
 
-/* Hamburger button -- hidden on desktop */
+/* Hamburger button — hidden on desktop */
 .nav-toggle-input {
     display: none;
 }
@@ -235,6 +235,17 @@ nav {
     box-shadow: 0 12px 32px rgba(21, 101, 192, 0.15);
 }
 
+.quality-icon-wrap {
+    width: 72px;
+    height: 72px;
+    margin-bottom: 1.4rem;
+}
+
+.quality-icon-wrap svg {
+    width: 100%;
+    height: 100%;
+}
+
 .quality-item h3 {
     font-size: 1.25rem;
     font-weight: 700;
@@ -250,53 +261,17 @@ nav {
     flex: 1;
 }
 
-/* Newsletter Section */
-.newsletter-bg {
-    background-color: var(--primary);
-    color: var(--white);
-    text-align: center;
-}
-
-.newsletter-content h2 {
-    color: var(--white);
-    margin-bottom: 1rem;
-}
-
-.newsletter-content p {
-    margin-bottom: 2rem;
-    font-size: 1.1rem;
-}
-
-.newsletter-form {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    flex-wrap: wrap;
-    max-width: 500px;
-    margin: 0 auto;
-}
-
-.newsletter-form input {
-    padding: 0.8rem 1rem;
-    border: none;
-    border-radius: 4px;
-    flex: 1;
-    min-width: 250px;
-}
-
-.newsletter-form button {
-    padding: 0.8rem 2rem;
-    background-color: var(--text);
-    color: var(--white);
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background-color 0.3s;
-}
-
-.newsletter-form button:hover {
-    background-color: #002171; /* Very dark blue for button hover */
+.quality-badge {
+    display: inline-block;
+    padding: 4px 14px;
+    background-color: var(--secondary);
+    color: var(--primary);
+    border-radius: 20px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+    border: 1px solid #bbdefb;
+    margin-top: auto;
 }
 
 /* Custom Order Section */
@@ -426,7 +401,139 @@ footer {
     background-color: #002171;
 }
 
-/* Mobile-only banner -- hidden on desktop, revealed via media query */
+/* ==============================================
+   MASCOT
+   ============================================== */
+
+.mascot-container {
+    position: fixed;
+    bottom: -160px;
+    right: 24px;
+    z-index: 9999;
+    width: 90px;
+    cursor: pointer;
+    animation:
+        mascot-slide-in 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 3s forwards,
+        mascot-bounce 2.8s ease-in-out 4s infinite;
+}
+
+.mascot-svg {
+    display: block;
+    width: 90px;
+    height: 90px;
+    filter: drop-shadow(0 6px 12px rgba(0,0,0,0.2));
+}
+
+.mascot-name {
+    text-align: center;
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-top: 2px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+/* Speech bubble */
+.mascot-bubble {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%) translateY(8px) scale(0.95);
+    bottom: calc(100% + 12px);
+    background: #fff;
+    color: var(--text);
+    padding: 12px 16px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    font-size: 0.88rem;
+    width: 180px;
+    text-align: center;
+    line-height: 1.5;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+    border: 1.5px solid var(--secondary);
+}
+
+.mascot-bubble p {
+    margin-bottom: 6px;
+}
+
+.mascot-bubble strong {
+    color: var(--primary);
+}
+
+/* Transparent bridge fills the gap between bubble and mascot so hover doesn't break */
+.mascot-bubble::before {
+    content: '';
+    position: absolute;
+    bottom: -16px;
+    left: 0;
+    right: 0;
+    height: 16px;
+}
+
+/* Bubble tail */
+.mascot-bubble::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    margin-left: -8px;
+    border-width: 10px 8px 0;
+    border-style: solid;
+    border-color: #fff transparent transparent;
+}
+
+.mascot-cta-link {
+    display: inline-block;
+    margin-top: 6px;
+    padding: 5px 12px;
+    background: var(--primary);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 20px;
+    font-size: 0.82rem;
+    font-weight: 700;
+    pointer-events: all;
+    transition: background 0.2s;
+}
+
+.mascot-cta-link:hover {
+    background: #0d47a1;
+}
+
+/* Show bubble on hover */
+.mascot-container:hover .mascot-bubble {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0) scale(1);
+    pointer-events: all;
+}
+
+/* Wiggle on hover, overrides the bounce */
+.mascot-container:hover {
+    animation: mascot-wiggle 0.45s ease-in-out infinite alternate !important;
+}
+
+/* Mascot smaller on mobile */
+@media screen and (max-width: 768px) {
+    .mascot-container {
+        width: 70px;
+        right: 12px;
+    }
+
+    .mascot-svg {
+        width: 70px;
+        height: 70px;
+    }
+
+    .mascot-bubble {
+        width: 155px;
+        font-size: 0.8rem;
+    }
+}
+
+/* Mobile-only banner — hidden on desktop, revealed via media query */
 .banner-close-input {
     display: none;
 }
@@ -477,7 +584,7 @@ footer {
     font-weight: bold;
 }
 
-/* Secondary CTA -- hidden on desktop, shown on mobile */
+/* Secondary CTA — hidden on desktop, shown on mobile */
 .cta-secondary {
     background-color: rgba(255,255,255,0.15);
     border: 2px solid var(--white);
