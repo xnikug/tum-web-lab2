@@ -1,6 +1,6 @@
 # 3dmobila - Modern Furniture Landing Page
 
-A responsive landing page for "3dmobila". This project showcases a modern design focusing on elegance, quality, and user experience.
+A responsive landing page for "3dmobila", now migrated to a Static Site Generator (11ty) for better maintainability and content workflow.
 
 ## Features
 
@@ -15,6 +15,16 @@ A responsive landing page for "3dmobila". This project showcases a modern design
 
 - HTML5
 - CSS3 (Vanilla, custom variables, Flexbox & Grid)
+- Eleventy (11ty)
+- TailwindCSS CDN (for newsletter section utilities)
+
+## Local Development
+
+- Install dependencies: `npm install`
+- Start dev server: `npm run dev`
+- Build static output: `npm run build`
+
+The generated site is written to `_site/`.
 
 ## Screenshots
 
