@@ -26,6 +26,14 @@ A responsive landing page for "3dmobila", now migrated to a Static Site Generato
 
 The generated site is written to `_site/`.
 
+## CMS (Decap)
+
+- Admin UI path: `/admin/`
+- CMS config: `admin/config.yml`
+- Main editable content source: `src/_data/site.json`
+
+To use Decap CMS with GitHub backend, authenticate the deployed site with your Git provider and ensure `repo`/`branch` in `admin/config.yml` match your repository.
+
 ## Screenshots
 
 ### Hero Banner
