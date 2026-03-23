@@ -1,9 +1,6 @@
 backend:
-  name: github
-  repo: xnikug/tum-web-lab2
+  name: git-gateway
   branch: master
-  base_url: https://xnikug-web.netlify.app
-  auth_endpoint: .netlify/functions/auth
 
 site_url: https://xnikug.github.io/tum-web-lab2
 display_url: https://xnikug.github.io/tum-web-lab2
