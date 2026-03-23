@@ -1,45 +1,62 @@
 # Deployment Guide
 
-## GitHub Pages Deployment
+## GitHub Pages Setup (One-time Configuration)
 
-The project is configured to automatically deploy to GitHub Pages on every push to the `master` branch using GitHub Actions.
+Before the first deployment, you **must** enable GitHub Pages in your repository:
 
-### What happens automatically:
+1. Go to your repository on GitHub
+2. Click **Settings** → **Pages**
+3. Under "Build and deployment":
+   - **Source**: Select "GitHub Actions"
+   - **Branch**: Leave as default (workflow determines deployment)
+4. Click **Save**
+
+Once enabled, the site will be deployed automatically on every push to `master`.
+
+## What happens automatically
 
 1. **Trigger**: Every push to `master` branch
-2. **Build**: GitHub Actions runs `npm run build` which generates the static site in `_site/`
-3. **Deploy**: Built site is deployed to GitHub Pages
+2. **Build**: GitHub Actions runs:
+   - Checks out code
+   - Installs dependencies via `npm ci`
+   - Builds static site via `npm run build`
+   - Generates output in `_site/` directory
+3. **Configure**: Sets up GitHub Pages configuration
+4. **Deploy**: Uploads artifacts and deploys to GitHub Pages
 
 ### Live URL
 
-The site is deployed at:
+Once deployed, the site is available at:
 ```
 https://xnikug.github.io/tum-web-lab2/
 ```
 
-### Configuration
+## Workflow Details
 
 - **Workflow file**: `.github/workflows/deploy.yml`
 - **Build output**: `_site/` directory
-- **Environment**: GitHub Pages environment
+- **Deployment service**: GitHub Pages (official service)
+- **Supported branches**: `master`
 
-### Disabling automatic builds
+## Troubleshooting
 
-If you need to disable auto-deployment:
-- Disable the workflow in GitHub Actions settings
-- Or delete `.github/workflows/deploy.yml`
+### Deployment fails with "Cannot find any run"
+- **Fix**: Ensure GitHub Pages is set to "GitHub Actions" source in repository Settings → Pages
 
-### Monitoring deployments
+### Site not updating after push
+- Check GitHub Actions tab for workflow failures
+- Verify branch is `master`
+- Wait 1-2 minutes for GitHub Pages to refresh
 
-- View deployment status in GitHub Actions tab
-- Check build logs for any errors
-- GitHub Pages settings show the deployment URL and status
+### Clear cache / force rebuild
+- Go to Actions → Click workflow → "Run workflow" button for manual trigger
 
-### Local testing before deployment
+## Local testing
 
-Before pushing to master, test locally:
+Before deployment, test the site locally:
+
 ```bash
 npm run build
 cd _site
-# Serve locally for testing (optional: python -m http.server 8000)
+python -m http.server 8000  # Opens at http://localhost:8000
 ```
