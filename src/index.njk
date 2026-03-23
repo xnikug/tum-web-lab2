@@ -39,7 +39,7 @@ layout: layouts/base.njk
     <h2 class="section-title">{{ cms.products.title }}</h2>
     <div class="product-grid">
         {% for product in cms.products.items %}
-        {% if product.visible != false %}
+        {% if product.visible is not defined or product.visible == true or product.visible == "true" %}
         <div class="product-card">
             <img src="{{ product.image }}" alt="{{ product.imageAlt }}" class="product-img">
             <h3>{{ product.title }}</h3>
