@@ -1,0 +1,9 @@
+{
+  "items": [
+    { "label": "Acasă", "href": "#hero" },
+    { "label": "Colecție", "href": "#collection" },
+    { "label": "Calitate", "href": "#quality" },
+    { "label": "Comandă", "href": "#custom-order" },
+    { "label": "Despre Noi", "href": "#about" }
+  ]
+}

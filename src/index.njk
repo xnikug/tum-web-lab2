@@ -1,13 +1,12 @@
 ---
 layout: layouts/base.njk
-title: {{ site.title }}
 ---
 <input type="checkbox" id="navToggle" class="nav-toggle-input">
 
 <nav id="navbar">
-    <div class="logo">{{ site.brand }}</div>
+    <div class="logo">{{ cms.general.brand }}</div>
     <ul class="nav-links" id="navLinks">
-        {% for item in site.nav %}
+        {% for item in cms.navigation.items %}
         <li><a href="{{ item.href }}">{{ item.label }}</a></li>
         {% endfor %}
     </ul>
@@ -20,26 +19,26 @@ title: {{ site.title }}
 
 <input type="checkbox" id="bannerClose" class="banner-close-input">
 <div class="mobile-only-banner" id="mobileBanner">
-    <span class="mobile-banner-icon">{{ site.mobileBanner.icon }}</span>
+    <span class="mobile-banner-icon">{{ cms.mobileBanner.icon }}</span>
     <div>
-        <strong>{{ site.mobileBanner.title }}</strong>
-        <p>{{ site.mobileBanner.description }} <code>{{ site.mobileBanner.code }}</code></p>
+        <strong>{{ cms.mobileBanner.title }}</strong>
+        <p>{{ cms.mobileBanner.description }} <code>{{ cms.mobileBanner.code }}</code></p>
     </div>
-    <label for="bannerClose" class="mobile-banner-close">{{ site.mobileBanner.closeLabel }}</label>
+    <label for="bannerClose" class="mobile-banner-close">{{ cms.mobileBanner.closeLabel }}</label>
 </div>
 
 <header id="hero" class="hero-section">
     <div class="hero-content">
-        <h1>{{ site.hero.title }}</h1>
-        <p>{{ site.hero.description }}</p>
-        <a href="{{ site.hero.primaryCtaHref }}" class="cta-button">{{ site.hero.primaryCtaText }}</a>
-        <a href="{{ site.hero.secondaryCtaHref }}" class="cta-button cta-secondary mobile-only-cta">{{ site.hero.secondaryCtaText }}</a>
+        <h1>{{ cms.hero.title }}</h1>
+        <p>{{ cms.hero.description }}</p>
+        <a href="{{ cms.hero.primaryCtaHref }}" class="cta-button">{{ cms.hero.primaryCtaText }}</a>
+        <a href="{{ cms.hero.secondaryCtaHref }}" class="cta-button cta-secondary mobile-only-cta">{{ cms.hero.secondaryCtaText }}</a>
     </div>
 </header>
 <section id="collection" class="section-padding">
-    <h2 class="section-title">{{ site.collection.title }}</h2>
+    <h2 class="section-title">{{ cms.products.title }}</h2>
     <div class="product-grid">
-        {% for product in site.collection.products %}
+        {% for product in cms.products.items %}
         <div class="product-card">
             <img src="{{ product.image }}" alt="{{ product.imageAlt }}" class="product-img">
             <h3>{{ product.title }}</h3>
@@ -51,10 +50,10 @@ title: {{ site.title }}
 </section>
 
 <section id="quality" class="section-padding quality-bg">
-    <h2 class="section-title">{{ site.quality.title }}</h2>
-    <p class="quality-subtitle">{{ site.quality.subtitle }}</p>
+    <h2 class="section-title">{{ cms.quality.title }}</h2>
+    <p class="quality-subtitle">{{ cms.quality.subtitle }}</p>
     <div class="quality-grid">
-        {% for item in site.quality.items %}
+        {% for item in cms.quality.items %}
         <div class="quality-item">
             <h3>{{ item.title }}</h3>
             <p>{{ item.description }}</p>
@@ -65,14 +64,14 @@ title: {{ site.title }}
 
 <section id="newsletter" class="py-16 px-4 text-center" style="background-color: var(--primary);">
     <div class="max-w-2xl mx-auto">
-        <h2 class="text-3xl font-bold mb-3 text-white">{{ site.newsletter.title }}</h2>
+        <h2 class="text-3xl font-bold mb-3 text-white">{{ cms.newsletter.title }}</h2>
         <p class="text-base mb-8 text-white max-w-lg mx-auto">
-            {{ site.newsletter.description }}
+            {{ cms.newsletter.description }}
         </p>
         <form class="flex flex-col sm:flex-row justify-center gap-3 max-w-md mx-auto">
             <input
                 type="email"
-                placeholder="{{ site.newsletter.placeholder }}"
+                placeholder="{{ cms.newsletter.placeholder }}"
                 required
                 class="flex-1 px-4 py-3 rounded text-gray-900 text-base outline-none"
             >
@@ -80,56 +79,56 @@ title: {{ site.title }}
                 type="submit"
                 class="newsletter-submit-btn px-6 py-3 font-bold rounded text-white transition-colors duration-200 whitespace-nowrap"
             >
-                {{ site.newsletter.buttonText }}
+                {{ cms.newsletter.buttonText }}
             </button>
         </form>
     </div>
 </section>
 
 <section id="custom-order" class="section-padding">
-    <h2 class="section-title">{{ site.customOrder.title }}</h2>
-    <p style="text-align: center; max-width: 600px; margin: 0 auto 2rem;">{{ site.customOrder.description }}</p>
+    <h2 class="section-title">{{ cms.customOrder.title }}</h2>
+    <p style="text-align: center; max-width: 600px; margin: 0 auto 2rem;">{{ cms.customOrder.description }}</p>
     <form class="custom-order-form">
         <div class="form-group">
-            <label for="name">{{ site.customOrder.nameLabel }}</label>
-            <input type="text" id="name" placeholder="{{ site.customOrder.namePlaceholder }}" required>
+            <label for="name">{{ cms.customOrder.nameLabel }}</label>
+            <input type="text" id="name" placeholder="{{ cms.customOrder.namePlaceholder }}" required>
         </div>
         <div class="form-row">
             <div class="form-group">
-                <label for="email">{{ site.customOrder.emailLabel }}</label>
-                <input type="email" id="email" placeholder="{{ site.customOrder.emailPlaceholder }}" required>
+                <label for="email">{{ cms.customOrder.emailLabel }}</label>
+                <input type="email" id="email" placeholder="{{ cms.customOrder.emailPlaceholder }}" required>
             </div>
             <div class="form-group">
-                <label for="phone">{{ site.customOrder.phoneLabel }}</label>
-                <input type="tel" id="phone" placeholder="{{ site.customOrder.phonePlaceholder }}">
+                <label for="phone">{{ cms.customOrder.phoneLabel }}</label>
+                <input type="tel" id="phone" placeholder="{{ cms.customOrder.phonePlaceholder }}">
             </div>
         </div>
         <div class="form-group">
-            <label for="details">{{ site.customOrder.detailsLabel }}</label>
-            <textarea id="details" rows="5" placeholder="{{ site.customOrder.detailsPlaceholder }}"></textarea>
+            <label for="details">{{ cms.customOrder.detailsLabel }}</label>
+            <textarea id="details" rows="5" placeholder="{{ cms.customOrder.detailsPlaceholder }}"></textarea>
         </div>
-        <button type="submit" class="submit-btn">{{ site.customOrder.submitText }}</button>
+        <button type="submit" class="submit-btn">{{ cms.customOrder.submitText }}</button>
     </form>
 </section>
 
 <section id="about" class="section-padding about-bg">
     <div class="about-content">
-        <h2 class="section-title">{{ site.about.title }}</h2>
-        {% for paragraph in site.about.paragraphs %}
+        <h2 class="section-title">{{ cms.about.title }}</h2>
+        {% for paragraph in cms.about.paragraphs %}
         <p>{{ paragraph }}</p>
         {% endfor %}
     </div>
 </section>
 
 <footer>
-    <p>{{ site.footer.text }}</p>
+    <p>{{ cms.footer.text }}</p>
 </footer>
 
-<div id="mascot" class="mascot-container" role="img" aria-label="{{ site.mascot.ariaLabel }}">
+<div id="mascot" class="mascot-container" role="img" aria-label="{{ cms.mascot.ariaLabel }}">
     <div class="mascot-bubble">
-        <p>{{ site.mascot.greeting }} <strong>{{ site.mascot.name }}</strong>!</p>
-        <p>{{ site.mascot.description }}</p>
-        <a href="{{ site.mascot.ctaHref }}" class="mascot-cta-link">{{ site.mascot.ctaText }}</a>
+        <p>{{ cms.mascot.greeting }} <strong>{{ cms.mascot.name }}</strong>!</p>
+        <p>{{ cms.mascot.description }}</p>
+        <a href="{{ cms.mascot.ctaHref }}" class="mascot-cta-link">{{ cms.mascot.ctaText }}</a>
     </div>
     <svg class="mascot-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
         <rect x="20" y="52" width="60" height="28" rx="8" fill="#1565c0"/>
@@ -150,5 +149,5 @@ title: {{ site.title }}
         <circle cx="39" cy="44" r="3" fill="#f48fb1" opacity="0.5"/>
         <circle cx="61" cy="44" r="3" fill="#f48fb1" opacity="0.5"/>
     </svg>
-    <div class="mascot-name">{{ site.mascot.name }}</div>
+    <div class="mascot-name">{{ cms.mascot.name }}</div>
 </div>

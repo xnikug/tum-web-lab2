@@ -1,0 +1,13 @@
+{
+  "title": "Design Personalizat",
+  "description": "Ai o idee unică? Povestește-ne despre viziunea ta și artizanii noștri o vor transforma în realitate.",
+  "nameLabel": "Nume Complet",
+  "namePlaceholder": "Ex: Ion Popescu",
+  "emailLabel": "Email",
+  "emailPlaceholder": "email@exemplu.com",
+  "phoneLabel": "Telefon",
+  "phonePlaceholder": "07xx xxx xxx",
+  "detailsLabel": "Detalii Proiect",
+  "detailsPlaceholder": "Descrie dimensiunile, materialele dorite și stilul...",
+  "submitText": "Trimite Cererea"
+}
