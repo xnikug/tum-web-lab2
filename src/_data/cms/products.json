@@ -23,7 +23,7 @@
       "image": "https://images.unsplash.com/photo-1517991104123-1d56a6e81ed9?w=400&q=80",
       "imageAlt": "Lampă Modernă",
       "buttonText": "Adaugă în Coș",
-      "visible": true
+      "visible": false
     }
   ]
 }
