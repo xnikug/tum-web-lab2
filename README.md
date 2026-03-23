@@ -30,7 +30,7 @@ The generated site is written to `_site/`.
 
 - Admin UI path: `/admin/`
 - CMS config: `admin/config.yml`
-- Main editable content source: `src/_data/site.json`
+- Editable section files: `src/_data/cms/*.json`
 
 To use Decap CMS with GitHub backend, authenticate the deployed site with your Git provider and ensure `repo`/`branch` in `admin/config.yml` match your repository.
 

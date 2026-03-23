@@ -12,119 +12,133 @@ collections:
   - name: site
     label: Site Content
     files:
-      - name: content
-        label: Landing Content
-        file: src/_data/site.json
+      - name: general
+        label: General
+        file: src/_data/cms/general.json
         format: json
         fields:
           - { label: Brand, name: brand, widget: string }
           - { label: Page Title, name: title, widget: string }
 
-          - label: Navigation
-            name: nav
+      - name: navigation
+        label: Navigation
+        file: src/_data/cms/navigation.json
+        format: json
+        fields:
+          - label: Menu Items
+            name: items
             widget: list
             fields:
               - { label: Label, name: label, widget: string }
               - { label: Link, name: href, widget: string }
 
-          - label: Mobile Banner
-            name: mobileBanner
-            widget: object
-            fields:
-              - { label: Icon Label, name: icon, widget: string }
-              - { label: Title, name: title, widget: string }
-              - { label: Description, name: description, widget: text }
-              - { label: Promo Code, name: code, widget: string }
-              - { label: Close Label, name: closeLabel, widget: string }
+      - name: mobileBanner
+        label: Mobile Banner
+        file: src/_data/cms/mobileBanner.json
+        format: json
+        fields:
+          - { label: Icon Label, name: icon, widget: string }
+          - { label: Title, name: title, widget: string }
+          - { label: Description, name: description, widget: text }
+          - { label: Promo Code, name: code, widget: string }
+          - { label: Close Label, name: closeLabel, widget: string }
 
-          - label: Hero
-            name: hero
-            widget: object
-            fields:
-              - { label: Title, name: title, widget: string }
-              - { label: Description, name: description, widget: text }
-              - { label: Primary CTA Text, name: primaryCtaText, widget: string }
-              - { label: Primary CTA Link, name: primaryCtaHref, widget: string }
-              - { label: Secondary CTA Text, name: secondaryCtaText, widget: string }
-              - { label: Secondary CTA Link, name: secondaryCtaHref, widget: string }
+      - name: hero
+        label: Hero
+        file: src/_data/cms/hero.json
+        format: json
+        fields:
+          - { label: Title, name: title, widget: string }
+          - { label: Description, name: description, widget: text }
+          - { label: Primary CTA Text, name: primaryCtaText, widget: string }
+          - { label: Primary CTA Link, name: primaryCtaHref, widget: string }
+          - { label: Secondary CTA Text, name: secondaryCtaText, widget: string }
+          - { label: Secondary CTA Link, name: secondaryCtaHref, widget: string }
 
-          - label: Collection
-            name: collection
-            widget: object
+      - name: products
+        label: Collection
+        file: src/_data/cms/products.json
+        format: json
+        fields:
+          - { label: Section Title, name: title, widget: string }
+          - label: Products
+            name: items
+            widget: list
             fields:
-              - { label: Section Title, name: title, widget: string }
-              - label: Products
-                name: products
-                widget: list
-                fields:
-                  - { label: Product Name, name: title, widget: string }
-                  - { label: Price, name: price, widget: string }
-                  - { label: Image URL, name: image, widget: string }
-                  - { label: Image Alt, name: imageAlt, widget: string }
-                  - { label: Button Text, name: buttonText, widget: string }
-
-          - label: Quality
-            name: quality
-            widget: object
-            fields:
-              - { label: Section Title, name: title, widget: string }
-              - { label: Subtitle, name: subtitle, widget: text }
-              - label: Items
-                name: items
-                widget: list
-                fields:
-                  - { label: Item Title, name: title, widget: string }
-                  - { label: Description, name: description, widget: text }
-
-          - label: Newsletter
-            name: newsletter
-            widget: object
-            fields:
-              - { label: Title, name: title, widget: string }
-              - { label: Description, name: description, widget: text }
-              - { label: Email Placeholder, name: placeholder, widget: string }
+              - { label: Product Name, name: title, widget: string }
+              - { label: Price, name: price, widget: string }
+              - { label: Image URL, name: image, widget: string }
+              - { label: Image Alt, name: imageAlt, widget: string }
               - { label: Button Text, name: buttonText, widget: string }
 
-          - label: Custom Order
-            name: customOrder
-            widget: object
+      - name: quality
+        label: Quality
+        file: src/_data/cms/quality.json
+        format: json
+        fields:
+          - { label: Section Title, name: title, widget: string }
+          - { label: Subtitle, name: subtitle, widget: text }
+          - label: Items
+            name: items
+            widget: list
             fields:
-              - { label: Section Title, name: title, widget: string }
+              - { label: Item Title, name: title, widget: string }
               - { label: Description, name: description, widget: text }
-              - { label: Name Label, name: nameLabel, widget: string }
-              - { label: Name Placeholder, name: namePlaceholder, widget: string }
-              - { label: Email Label, name: emailLabel, widget: string }
-              - { label: Email Placeholder, name: emailPlaceholder, widget: string }
-              - { label: Phone Label, name: phoneLabel, widget: string }
-              - { label: Phone Placeholder, name: phonePlaceholder, widget: string }
-              - { label: Details Label, name: detailsLabel, widget: string }
-              - { label: Details Placeholder, name: detailsPlaceholder, widget: text }
-              - { label: Submit Text, name: submitText, widget: string }
 
-          - label: About
-            name: about
-            widget: object
-            fields:
-              - { label: Section Title, name: title, widget: string }
-              -
-                label: Paragraphs
-                name: paragraphs
-                widget: list
-                field: { label: Paragraph, name: paragraph, widget: text }
+      - name: newsletter
+        label: Newsletter
+        file: src/_data/cms/newsletter.json
+        format: json
+        fields:
+          - { label: Title, name: title, widget: string }
+          - { label: Description, name: description, widget: text }
+          - { label: Email Placeholder, name: placeholder, widget: string }
+          - { label: Button Text, name: buttonText, widget: string }
 
-          - label: Footer
-            name: footer
-            widget: object
-            fields:
-              - { label: Footer Text, name: text, widget: string }
+      - name: customOrder
+        label: Custom Order
+        file: src/_data/cms/customOrder.json
+        format: json
+        fields:
+          - { label: Section Title, name: title, widget: string }
+          - { label: Description, name: description, widget: text }
+          - { label: Name Label, name: nameLabel, widget: string }
+          - { label: Name Placeholder, name: namePlaceholder, widget: string }
+          - { label: Email Label, name: emailLabel, widget: string }
+          - { label: Email Placeholder, name: emailPlaceholder, widget: string }
+          - { label: Phone Label, name: phoneLabel, widget: string }
+          - { label: Phone Placeholder, name: phonePlaceholder, widget: string }
+          - { label: Details Label, name: detailsLabel, widget: string }
+          - { label: Details Placeholder, name: detailsPlaceholder, widget: text }
+          - { label: Submit Text, name: submitText, widget: string }
 
-          - label: Mascot
-            name: mascot
-            widget: object
-            fields:
-              - { label: Aria Label, name: ariaLabel, widget: string }
-              - { label: Greeting Prefix, name: greeting, widget: string }
-              - { label: Name, name: name, widget: string }
-              - { label: Description, name: description, widget: text }
-              - { label: CTA Text, name: ctaText, widget: string }
-              - { label: CTA Link, name: ctaHref, widget: string }
+      - name: about
+        label: About
+        file: src/_data/cms/about.json
+        format: json
+        fields:
+          - { label: Section Title, name: title, widget: string }
+          -
+            label: Paragraphs
+            name: paragraphs
+            widget: list
+            field: { label: Paragraph, name: paragraph, widget: text }
+
+      - name: footer
+        label: Footer
+        file: src/_data/cms/footer.json
+        format: json
+        fields:
+          - { label: Footer Text, name: text, widget: string }
+
+      - name: mascot
+        label: Mascot
+        file: src/_data/cms/mascot.json
+        format: json
+        fields:
+          - { label: Aria Label, name: ariaLabel, widget: string }
+          - { label: Greeting Prefix, name: greeting, widget: string }
+          - { label: Name, name: name, widget: string }
+          - { label: Description, name: description, widget: text }
+          - { label: CTA Text, name: ctaText, widget: string }
+          - { label: CTA Link, name: ctaHref, widget: string }
