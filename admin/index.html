@@ -10,9 +10,27 @@
     <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
     <script>
       if (window.netlifyIdentity) {
+        const authHashKeys = [
+          "invite_token",
+          "confirmation_token",
+          "recovery_token",
+          "email_change_token"
+        ];
+
+        const hasAuthTokenInHash = authHashKeys.some((key) =>
+          window.location.hash.includes(key)
+        );
+
+        if (hasAuthTokenInHash) {
+          window.netlifyIdentity.open();
+        }
+
         window.netlifyIdentity.on("init", (user) => {
           if (!user) {
             window.netlifyIdentity.on("login", () => {
+              document.location.href = "/admin/";
+            });
+            window.netlifyIdentity.on("signup", () => {
               document.location.href = "/admin/";
             });
           }
