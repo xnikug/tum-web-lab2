@@ -2,6 +2,11 @@ backend:
   name: github
   repo: xnikug/tum-web-lab2
   branch: master
+  base_url: https://xnikug-web.netlify.app
+  auth_endpoint: auth
+
+site_url: https://xnikug.github.io/tum-web-lab2
+display_url: https://xnikug.github.io/tum-web-lab2
 
 media_folder: images/uploads
 public_folder: /images/uploads
