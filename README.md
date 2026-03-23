@@ -34,6 +34,14 @@ The generated site is written to `_site/`.
 
 To use Decap CMS with GitHub backend, authenticate the deployed site with your Git provider and ensure `repo`/`branch` in `admin/config.yml` match your repository.
 
+## Deployment
+
+The site is automatically deployed to GitHub Pages on every push to the `master` branch via GitHub Actions.
+
+- **Workflow**: `.github/workflows/deploy.yml`
+- **Live Site**: [https://xnikug.github.io/tum-web-lab2/](https://xnikug.github.io/tum-web-lab2/)
+- **Deployment Details**: See [DEPLOYMENT.md](DEPLOYMENT.md)
+
 ## Screenshots
 
 ### Hero Banner
