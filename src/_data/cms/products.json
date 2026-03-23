@@ -15,7 +15,7 @@
       "image": "https://images.unsplash.com/photo-1533090481720-856c6e3c1fdc?w=400&q=80",
       "imageAlt": "Masă de Cafea Stejar",
       "buttonText": "Adaugă în Coș",
-      "visible": true
+      "visible": false
     },
     {
       "title": "Lampă Modernă",
