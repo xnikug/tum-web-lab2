@@ -11,11 +11,11 @@ Before the first deployment, you **must** enable GitHub Pages in your repository
    - **Branch**: Leave as default (workflow determines deployment)
 4. Click **Save**
 
-Once enabled, the site will be deployed automatically on every push to `master`.
+Once enabled, the site will be deployed automatically on every push to `master` (or `main`).
 
 ## What happens automatically
 
-1. **Trigger**: Every push to `master` branch
+1. **Trigger**: Every push to `master` or `main` branch
 2. **Build**: GitHub Actions runs:
    - Checks out code
    - Installs dependencies via `npm ci`
@@ -27,16 +27,19 @@ Once enabled, the site will be deployed automatically on every push to `master`.
 ### Live URL
 
 Once deployed, the site is available at:
+Once deployed, the site is available at:
 ```
 https://xnikug.github.io/tum-web-lab2/
 ```
 
 ## Workflow Details
+## Workflow Details
 
 - **Workflow file**: `.github/workflows/deploy.yml`
 - **Build output**: `_site/` directory
 - **Deployment service**: GitHub Pages (official service)
-- **Supported branches**: `master`
+- **Supported branches**: `master`, `main`
+- **Manual trigger**: Use "Run workflow" in Actions tab for manual deployments
 
 ## Troubleshooting
 
@@ -45,11 +48,11 @@ https://xnikug.github.io/tum-web-lab2/
 
 ### Site not updating after push
 - Check GitHub Actions tab for workflow failures
-- Verify branch is `master`
+- Verify branch is `master` or `main`
 - Wait 1-2 minutes for GitHub Pages to refresh
 
 ### Clear cache / force rebuild
-- Go to Actions → Click workflow → "Run workflow" button for manual trigger
+- Click "Run workflow" button in Actions tab to manually trigger deployment
 
 ## Local testing
 
@@ -59,4 +62,11 @@ Before deployment, test the site locally:
 npm run build
 cd _site
 python -m http.server 8000  # Opens at http://localhost:8000
+python -m http.server 8000  # Opens at http://localhost:8000
 ```
+
+## Configuration
+
+- **Workflow file**: `.github/workflows/deploy.yml`
+- **Environment**: GitHub Pages environment
+- **Status**: View in GitHub Actions tab
