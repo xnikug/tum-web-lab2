@@ -51,26 +51,8 @@
         </div>
     </header>
     <section id="collection" class="section-padding">
-        <h2 class="section-title">Colecția Recomandată</h2>
-        <div class="product-grid">
-            <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=400&q=80" alt="Canapea Velvet" class="product-img">
-                <h3>Canapea Velvet</h3>
-                <p>3999 MDL</p>
-                <button>Adaugă în Coș</button>
-            </div>
-            <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1533090481720-856c6e3c1fdc?w=400&q=80" alt="Masă de Cafea Stejar" class="product-img">
-                <h3>Masă de Cafea Stejar</h3>
-                <p>1199 MDL</p>
-                <button>Adaugă în Coș</button>
-            </div>
-            <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1517991104123-1d56a6e81ed9?w=400&q=80" alt="Lampă Modernă" class="product-img">
-                <h3>Lampă Modernă</h3>
-                <p>599 MDL</p>
-                <button>Adaugă în Coș</button>
-            </div>
+        <h2 id="collectionTitle" class="section-title">Colecția Recomandată</h2>
+        <div id="productGrid" class="product-grid">
         </div>
     </section>
 
@@ -183,6 +165,53 @@
         </svg>
         <div class="mascot-name">Armi</div>
     </div>
+
+    <script>
+        (async function renderProductsFromCms() {
+            try {
+                const response = await fetch('./src/_data/cms/products.json', { cache: 'no-store' });
+                if (!response.ok) {
+                    throw new Error('Could not load products.json');
+                }
+
+                const productsData = await response.json();
+                const titleEl = document.getElementById('collectionTitle');
+                const gridEl = document.getElementById('productGrid');
+
+                if (!gridEl) {
+                    return;
+                }
+
+                if (titleEl && typeof productsData.title === 'string' && productsData.title.trim()) {
+                    titleEl.textContent = productsData.title;
+                }
+
+                const items = Array.isArray(productsData.items) ? productsData.items : [];
+                const visibleItems = items.filter((product) => {
+                    return product.visible === undefined || product.visible === true || product.visible === 'true';
+                });
+
+                gridEl.innerHTML = visibleItems.map((product) => {
+                    const image = product.image || '';
+                    const imageAlt = product.imageAlt || product.title || 'Product image';
+                    const title = product.title || '';
+                    const price = product.price || '';
+                    const buttonText = product.buttonText || 'Adaugă în Coș';
+
+                    return `
+                        <div class="product-card">
+                            <img src="${image}" alt="${imageAlt}" class="product-img">
+                            <h3>${title}</h3>
+                            <p>${price}</p>
+                            <button>${buttonText}</button>
+                        </div>
+                    `;
+                }).join('');
+            } catch (error) {
+                console.error('Failed to render CMS products in index.html:', error);
+            }
+        })();
+    </script>
 
 </body>
 </html>
